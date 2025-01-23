@@ -35,6 +35,14 @@ class MonopolyController
         puts "Board loaded successfully from #{file_path}!"
     end
 
+    # Play a turn for a player
+    def play_turn(player, roll)
+        puts "#{player.name} rolls a #{roll}."
+        player.move(roll, @board.length())
+        puts "#{player.name} moves to position #{player.position}."
+        handle_property(player)
+    end
+
     # Handle player landing on a property
     def handle_property(player)
         property = @properties[player.position - 1]
