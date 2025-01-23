@@ -1,5 +1,5 @@
 class Property
-    attr_accessor :name. :price, :colour, :type, :owner
+    attr_accessor :name, :price, :colour, :type, :owner
 
     def initialize(name, price, colour, type)
         @name = name
