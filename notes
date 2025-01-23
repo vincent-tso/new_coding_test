@@ -39,6 +39,7 @@ Player has 0 or more Properties
 Property is owned by 1 Player
 
 ### Drawbacks
-
+Not a traditional MVC architecture strategy as controller implements view techniques itself to output response to the user.
+To fix this, I would create a view structure and implement dynamic responses to express to the user the output of each game file.
 
 
