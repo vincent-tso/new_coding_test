@@ -1,4 +1,4 @@
-Vincent Tso
+### Vincent Tso
 
 ## Woven Monopoly
 
@@ -38,7 +38,7 @@ How are the Player and Property associated?
 Player has 0 or more Properties
 Property is owned by 1 Player
 
-TODO
-Add comments
-Refactor code
-Remove global variables
+### Drawbacks
+
+
+

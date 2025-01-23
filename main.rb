@@ -3,13 +3,15 @@ require_relative './models/property'
 require_relative './controller/monopoly_controller'
 
 # Initiate variables
+STARTING_MONEY = 16
+
 monopoly_game = MonopolyController.new
 
 players = [
-    Player.new("Peter", 16),
-    Player.new("Billy", 16),
-    Player.new("Charlotte", 16),
-    Player.new("Sweedal", 16),
+    Player.new("Peter", STARTING_MONEY),
+    Player.new("Billy", STARTING_MONEY),
+    Player.new("Charlotte", STARTING_MONEY),
+    Player.new("Sweedal", STARTING_MONEY),
 ]
 
 # Load board.json file
@@ -24,27 +26,27 @@ def load_game(players, monopoly_game)
 end
 
 # Load rolls_#.json file
-def load_rolls(file_path, monopoly_game)
+def load_rolls(file_path, monopoly_game, players)
     json_data = File.read(file_path)
     rolls_data = JSON.parse(json_data, symbolize_names: true)
 
     puts "Rolls loaded successfully from #{file_path}!"
 
     rolls_data.each_with_index do |roll, index|
-        monopoly_game.play_turn(monopoly_game.players[index % 4], roll)
+        monopoly_game.play_turn(monopoly_game.players[index % players.length()], roll)
     end
 end
 
 # Run game 1
 load_game(players, monopoly_game)
-load_rolls("rolls_1.json", monopoly_game)
+load_rolls("rolls_1.json", monopoly_game, players)
 monopoly_game.display_game_state
 monopoly_game.declare_winner
 monopoly_game.reset_game
 
 # Run game 2
 load_game(players, monopoly_game)
-load_rolls("rolls_2.json", monopoly_game)
+load_rolls("rolls_2.json", monopoly_game, players)
 monopoly_game.display_game_state
 monopoly_game.declare_winner
 monopoly_game.reset_game
