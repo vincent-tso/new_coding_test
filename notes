@@ -1,0 +1,37 @@
+Vincent Tso
+
+## Woven Monopoly
+
+### Your task
+* Load in the board from board.json
+* Implement game logic as per the rules
+* Load in the given dice rolls files and simulate the game
+  * Who would win each game?
+  * How much money does everybody end up with?
+  * What spaces does everybody finish on?
+  
+Implement game logic - Use MVC pattern to structure game design
+
+### Models
+
+4 Players (Player model)
+
+Player model
+- name
+- money
+
+Property model
+- name
+- price
+- colour
+- type
+
+### Thoughts
+
+Controller records Player's position and Property associated with Player(s)
+
+How are the Player and Property associated?
+Player has 0 or more Properties
+Property is owned by 1 Player
+
+TBC
