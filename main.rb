@@ -2,6 +2,7 @@ require_relative './models/player'
 require_relative './models/property'
 require_relative './controller/monopoly_controller'
 
+# Initiate variables
 monopoly_game = MonopolyController.new
 
 players = [
@@ -34,12 +35,14 @@ def load_rolls(file_path, monopoly_game)
     end
 end
 
+# Run game 1
 load_game(players, monopoly_game)
 load_rolls("rolls_1.json", monopoly_game)
 monopoly_game.display_game_state
 monopoly_game.declare_winner
 monopoly_game.reset_game
 
+# Run game 2
 load_game(players, monopoly_game)
 load_rolls("rolls_2.json", monopoly_game)
 monopoly_game.display_game_state
