@@ -19,16 +19,20 @@ Implement game logic - Use MVC pattern to structure game design
 Player model
 - name
 - money
+- position
 
 Property model
 - name
 - price
 - colour
 - type
+- owner
 
 ### Thoughts
 
 Controller records Player's position and Property associated with Player(s)
+Player model needs attribute to record position
+Property model needs attribute to record owner or availability
 
 How are the Player and Property associated?
 Player has 0 or more Properties
