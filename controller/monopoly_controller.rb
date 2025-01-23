@@ -43,9 +43,14 @@ class MonopolyController
     # Play a turn for a player
     def play_turn(player, roll)
         if @running
+            starting_position = player.position
             puts "#{player.name} rolls a #{roll}."
             player.move(roll, @board.length())
             puts "#{player.name} moves to position #{player.position}."
+            if player.position < starting_position
+                player.money += 1 # Went past go
+            end
+
             handle_property(player)
         end
     end

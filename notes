@@ -15,16 +15,17 @@ Peter won the first game, Charlotte won the second game.
 The findings are as such:
 
 Game 1:
-Player Name: Peter, Money: $30, Position: 8
-Player Name: Billy, Money: $12, Position: 0
-Player Name: Charlotte, Money: $5, Position: 7
-Player Name: Sweedal, Money: $0, Position: 7
+Player Name: Peter, Money: $32, Position: 8
+Player Name: Billy, Money: $14, Position: 0
+Player Name: Charlotte, Money: $7, Position: 7
+Player Name: Sweedal, Money: $1, Position: 7
 
 Game 2:
-Player Name: Peter, Money: $2, Position: 4
-Player Name: Billy, Money: $18, Position: 2
-Player Name: Charlotte, Money: $24, Position: 0
-Player Name: Sweedal, Money: $0, Position: 8
+Player Name: Peter, Money: $5, Position: 4
+Player Name: Billy, Money: $20, Position: 2
+Player Name: Charlotte, Money: $27, Position: 0
+Player Name: Sweedal, Money: $2, Position: 8
+
 
 
 ### TODO
