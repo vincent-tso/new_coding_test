@@ -8,16 +8,16 @@ STARTING_MONEY = 16
 monopoly_game = MonopolyController.new
 
 players = [
-    Player.new("Peter", STARTING_MONEY),
-    Player.new("Billy", STARTING_MONEY),
-    Player.new("Charlotte", STARTING_MONEY),
-    Player.new("Sweedal", STARTING_MONEY),
+    ["Peter", STARTING_MONEY],
+    ["Billy", STARTING_MONEY],
+    ["Charlotte", STARTING_MONEY],
+    ["Sweedal", STARTING_MONEY],
 ]
 
 # Load board.json file
 def load_game(players, monopoly_game)
     players.each do |player|
-        monopoly_game.add_player(player.name, player.money)
+        monopoly_game.add_player(player[0], player[1])
     end
     
     monopoly_game.load_board("board.json")

@@ -2,15 +2,34 @@
 
 ## Woven Monopoly
 
-### Your task
-* Load in the board from board.json
-* Implement game logic as per the rules
-* Load in the given dice rolls files and simulate the game
-  * Who would win each game?
-  * How much money does everybody end up with?
-  * What spaces does everybody finish on?
-  
-Implement game logic - Use MVC pattern to structure game design
+### Instructions
+
+To run this mini-app, ensure that Ruby Version >=3.3 is installed.
+The game is run through "main.rb", which utilises the different ruby files to generate the game logic.
+Each file has been tested lightly for to ensure that the methods work.
+From the new_coding_test directory, run this command to enable the mini-app: ruby main.rb
+
+### Findings:
+Peter won the first game, Charlotte won the second game.
+
+The findings are as such:
+
+Game 1:
+Player Name: Peter, Money: $30, Position: 8
+Player Name: Billy, Money: $12, Position: 0
+Player Name: Charlotte, Money: $5, Position: 7
+Player Name: Sweedal, Money: $0, Position: 7
+
+Game 2:
+Player Name: Peter, Money: $2, Position: 4
+Player Name: Billy, Money: $18, Position: 2
+Player Name: Charlotte, Money: $24, Position: 0
+Player Name: Sweedal, Money: $0, Position: 8
+
+
+### TODO
+
+Implement game logic - Use MVC pattern to structure game design, enables a well-structured procedure to separate concerns from each file and maintains integrity and cohesion.
 
 ### Models
 

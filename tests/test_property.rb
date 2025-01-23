@@ -13,4 +13,3 @@ puts test_property.is_available # false
 puts test_property.owner.name # "Vincent Tso"
 
 test_property.display_info # Property Name: Test, Price: $20, Colour: Red, Type: Testing, Status: Owned by Vincent Tso
-
