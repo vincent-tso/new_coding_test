@@ -58,9 +58,18 @@ class MonopolyController
             if property.is_available
                 if player.money >= property.price
                     puts "#{player.name} can buy '#{property.name}' for $#{property.price}."
+                    player_properties = properties.select { |p| p.owner == player && p.colour == property.colour }
                     player.money -= property.price
                     property.owner = player
                     puts "#{player.name} bought '#{property.name}'."
+                    
+                    # Check if player owns full set of property
+                    if player_properties.length() > 0
+                        puts "#{player.name} owns the full property set. Rent is now increasing to double for those properties!"
+                        property.price = 2 * property.price
+                        player_properties.each { |p| p.price = 2 * p.price }
+                    end
+
                 else
                     puts "#{player.name} does not have enough money to buy '#{property.name}'."
                     # End game
