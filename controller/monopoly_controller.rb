@@ -63,10 +63,8 @@ class MonopolyController
                     puts "#{player.name} bought '#{property.name}'."
                 else
                     puts "#{player.name} does not have enough money to buy '#{property.name}'."
-                    # TODO
                     # End game
-                    display_game_state
-                    declare_winner
+                    @running = false
                 end
             else
                 if property.owner != player
@@ -78,10 +76,8 @@ class MonopolyController
                         puts "#{player.name} paid $#{property.price} to #{property.owner.name}."
                     else
                         puts "#{player.name} cannot afford to pay the rent and is bankrupt!"
-                        # TODO
                         # End game
-                        display_game_state
-                        declare_winner
+                        @running = false
                     end
                 else
                     puts "#{player.name} landed on their own property '#{property.name}'."
@@ -90,7 +86,7 @@ class MonopolyController
         end
     end
 
-      # Display game state
+    # Display game state
     def display_game_state
         puts "Game State:"
         @players.each do |player|
@@ -98,14 +94,14 @@ class MonopolyController
         end
     end
 
+    # Game over, declare winner
     def declare_winner
-        # TODO
         winner = @players.max_by(&:money)
         
         puts "GAME OVER: #{winner.name} has won!"
-        @running = false
     end
 
+    # Reset game for new set of rolls
     def reset_game
         @players = []
         @properties = []

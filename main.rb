@@ -34,8 +34,12 @@ end
 
 load_game
 load_rolls("rolls_1.json")
+@monopoly_game.display_game_state
+@monopoly_game.declare_winner
 @monopoly_game.reset_game
 
 load_game
 load_rolls("rolls_2.json")
+@monopoly_game.display_game_state
+@monopoly_game.declare_winner
 @monopoly_game.reset_game
