@@ -1,10 +1,11 @@
 class MonopolyController
-    attr_reader :players, :properties, :board
+    attr_reader :players, :properties, :board, :running
 
     def initialize
         @players = []
         @properties = []
         @board = []
+        @running = true
     end
 
     # Add a player to the game
@@ -37,17 +38,19 @@ class MonopolyController
 
     # Play a turn for a player
     def play_turn(player, roll)
-        puts "#{player.name} rolls a #{roll}."
-        player.move(roll, @board.length())
-        puts "#{player.name} moves to position #{player.position}."
-        handle_property(player)
+        if @running
+            puts "#{player.name} rolls a #{roll}."
+            player.move(roll, @board.length())
+            puts "#{player.name} moves to position #{player.position}."
+            handle_property(player)
+        end
     end
 
     # Handle player landing on a property
     def handle_property(player)
         property = @properties[player.position - 1]
 
-        if property.available?
+        if property.is_available
             if player.money >= property.price
                 puts "#{player.name} can buy '#{property.name}' for $#{property.price}."
                 player.money -= property.price
@@ -57,6 +60,8 @@ class MonopolyController
                 puts "#{player.name} does not have enough money to buy '#{property.name}'."
                 # TODO
                 # End game
+                display_game_state
+                declare_winner
             end
         else
             if property.owner != player
@@ -71,6 +76,8 @@ class MonopolyController
                     puts "#{player.name} cannot afford to pay the rent and is bankrupt!"
                     # TODO
                     # End game
+                    display_game_state
+                    declare_winner
                 end
             else
                 puts "#{player.name} landed on their own property '#{property.name}'."
@@ -78,4 +85,20 @@ class MonopolyController
         end
     end
 
+      # Display game state
+    def display_game_state
+        puts "Game State:"
+        @players.each do |player|
+            player.display_info
+            @properties[player.position].display_info
+        end
+    end
+
+    def declare_winner
+        # TODO
+        winner = @players.max_by(&:money)
+        
+        puts "GAME OVER: #{winner.name} has won!"
+        @running = false
+    end
 end

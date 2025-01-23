@@ -9,7 +9,12 @@ class Property
         @owner = nil
     end
 
-    def available?
+    def is_available
         @owner.nil? # Check if Property has owner
+    end
+
+    def display_info
+        owner_status = is_available ? "Available" : "Owned by #{@owner.name}"
+        puts "Property Name: #{@name}, Price: $#{@price}, Colour: #{@colour}, Type: #{@type}, Status: #{owner_status}"
     end
 end
