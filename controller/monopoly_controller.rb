@@ -65,7 +65,7 @@ class MonopolyController
                     
                     # Check if player owns full set of property
                     if player_properties.length() > 0
-                        puts "#{player.name} owns the full property set. Rent is now increasing to double for those properties!"
+                        puts "#{player.name} owns the full property set. Rent is now double for those properties!"
                         property.price = 2 * property.price
                         player_properties.each { |p| p.price = 2 * p.price }
                     end
